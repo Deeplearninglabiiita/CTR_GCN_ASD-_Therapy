@@ -1,0 +1,54 @@
+work_dir: ./work_dir/mmasd/ctrgcn_motion
+
+# feeder
+feeder: feeders.feeder_mmasd.Feeder
+
+train_feeder_args:
+  data_path: ../processed_data/splits/X_train.npy
+  label_path: ../processed_data/splits/y_train.npy
+  severity_path: ../processed_data/splits/severity_train.npy
+  rrb_path: ../processed_data/splits/rrb_train.npy
+  debug: False
+
+test_feeder_args:
+  data_path: ../processed_data/splits/X_test.npy
+  label_path: ../processed_data/splits/y_test.npy
+  severity_path: ../processed_data/splits/severity_test.npy
+  rrb_path: ../processed_data/splits/rrb_test.npy
+  debug: False
+
+# model
+model: model.ctrgcn.Model
+
+model_args:
+  num_class: 11
+  num_point: 24
+  num_person: 1
+  graph: graph.mmasd.Graph
+  graph_args:
+    labeling_mode: spatial
+
+# training
+device: [0]
+
+batch_size: 8
+test_batch_size: 8
+
+num_worker: 0
+
+num_epoch: 30
+
+base_lr: 0.01
+step: [20, 35]
+
+weight_decay: 0.0001
+
+# optimizer
+optimizer: SGD
+nesterov: True
+
+# logging
+log_interval: 20
+save_interval: 1
+eval_interval: 1
+save_epoch: 1

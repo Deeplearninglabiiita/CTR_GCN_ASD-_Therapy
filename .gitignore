@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pt
+*.npy
+*.npz
+results/
+ROMP_3D_Coordinates/
+CTR-GCN-20260420T061214Z-3-001/
+processed_data/
+work_dir/
+embeddings/

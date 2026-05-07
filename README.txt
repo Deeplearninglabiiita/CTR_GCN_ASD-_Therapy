@@ -206,4 +206,4 @@ Future research directions include:
 * Transformer-based graph architectures
 * Larger clinically diverse ASD cohorts
 * Real-time clinical deployment systems
-* Explainable AI for therapeutic behavioral assessment.
+* Explainable AI for therapeutic behavioral assessment
